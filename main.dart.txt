@@ -1,0 +1,150 @@
+void main() {
+  
+  int myInt = 25;
+  double myDouble = 10.5;
+  String myString = "100";
+  bool isStudent = true;
+  List<int> numbers = [3, 17, 101, 7, 50, 0];
+
+  print('--- Defined Variables ---');
+  print('Integer: $myInt');
+  print('Double: $myDouble');
+  print('String: $myString');
+  print('Boolean: $isStudent');
+  print('List: $numbers\n');
+
+  
+  print('--- Type Conversions ---');
+  print('String to int: ${stringToInt("123")}');
+  print('String to double: ${stringToDouble("123.45")}');
+  print('Int to String: ${intToString(99)}');
+  print('Int to double: ${intToDouble(99)}\n');
+
+  
+  convertAndDisplay("45");
+
+  
+  print('\n--- If-Else Statements ---');
+  checkNumberSign(-5);
+  checkVotingEligibility(17);
+
+  
+  print('\n--- Switch Statement ---');
+  printDayOfWeek(3);
+
+  
+  print('\n--- For Loop (1 to 10) ---');
+  for (int i = 1; i <= 10; i++) {
+    print(i);
+  }
+
+  print('\n--- While Loop (10 to 1) ---');
+  int j = 10;
+  while (j >= 1) {
+    print(j);
+    j--;
+  }
+
+  print('\n--- Do-While Loop (1 to 5) ---');
+  int k = 1;
+  do {
+    print(k);
+    k++;
+  } while (k <= 5);
+
+  
+  print('\n--- Complex Example: List Iteration & Control Flow ---');
+  List<int> values = [2, 15, 120, 7, 88];
+
+  for (int number in values) {
+    print('Number: $number');
+
+    
+    if (number % 2 == 0) {
+      print(' - Even');
+    } else {
+      print(' - Odd');
+    }
+
+    
+    switch (true) {
+      case true when number >= 1 && number <= 10:
+        print(' - Category: Small');
+        break;
+      case true when number >= 11 && number <= 100:
+        print(' - Category: Medium');
+        break;
+      case true when number > 100:
+        print(' - Category: Large');
+        break;
+      default:
+        print(' - Category: Unknown');
+    }
+  }
+}
+
+
+int stringToInt(String input) => int.parse(input);
+
+double stringToDouble(String input) => double.parse(input);
+
+String intToString(int number) => number.toString();
+
+double intToDouble(int number) => number.toDouble();
+
+
+void convertAndDisplay(String input) {
+  int intVal = int.parse(input);
+  double doubleVal = double.parse(input);
+  print('\n--- convertAndDisplay() ---');
+  print('Original String: "$input"');
+  print('As int: $intVal');
+  print('As double: $doubleVal');
+}
+
+
+void checkNumberSign(int number) {
+  if (number > 0) {
+    print('$number is positive');
+  } else if (number < 0) {
+    print('$number is negative');
+  } else {
+    print('$number is zero');
+  }
+}
+
+void checkVotingEligibility(int age) {
+  if (age >= 18) {
+    print('Age $age: Eligible to vote');
+  } else {
+    print('Age $age: Not eligible to vote');
+  }
+}
+
+void printDayOfWeek(int day) {
+  switch (day) {
+    case 1:
+      print('Monday');
+      break;
+    case 2:
+      print('Tuesday');
+      break;
+    case 3:
+      print('Wednesday');
+      break;
+    case 4:
+      print('Thursday');
+      break;
+    case 5:
+      print('Friday');
+      break;
+    case 6:
+      print('Saturday');
+      break;
+    case 7:
+      print('Sunday');
+      break;
+    default:
+      print('Invalid day');
+  }
+}
